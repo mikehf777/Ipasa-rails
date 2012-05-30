@@ -1,4 +1,6 @@
 Ipasa::Application.routes.draw do
+  resources :videos
+
   resources :leases
 
   resources :localities
