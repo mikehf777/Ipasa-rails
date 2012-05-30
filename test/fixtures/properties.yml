@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre: MyString
+  num_ext: 1
+  direccion: MyText
+  google: MyString
+  descripcion: MyText
+  ofertada: false
+  locality_id: 1
+
+two:
+  nombre: MyString
+  num_ext: 1
+  direccion: MyText
+  google: MyString
+  descripcion: MyText
+  ofertada: false
+  locality_id: 1

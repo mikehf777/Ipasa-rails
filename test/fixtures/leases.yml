@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  num_int: 1
+  status_renta: false
+  type_id: 1
+  precio: 1.5
+  descripcion: MyText
+  property_id: 1
+
+two:
+  num_int: 1
+  status_renta: false
+  type_id: 1
+  precio: 1.5
+  descripcion: MyText
+  property_id: 1

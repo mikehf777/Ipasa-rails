@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  property_id: 1
+  descripcion: MyText
+  ruta: MyText
+
+two:
+  property_id: 1
+  descripcion: MyText
+  ruta: MyText
