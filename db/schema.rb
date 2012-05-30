@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120530165919) do
+ActiveRecord::Schema.define(:version => 20120530204548) do
 
   create_table "leases", :force => true do |t|
     t.integer  "num_int"
@@ -48,11 +48,19 @@ ActiveRecord::Schema.define(:version => 20120530165919) do
     t.integer  "locality_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "clave"
   end
 
   create_table "types", :force => true do |t|
     t.string   "nombre"
     t.text     "descripcion"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "videos", :force => true do |t|
+    t.string   "url"
+    t.integer  "property_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
