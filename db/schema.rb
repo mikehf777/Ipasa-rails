@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120530212737) do
+ActiveRecord::Schema.define(:version => 20120530215401) do
+
+  create_table "duties", :force => true do |t|
+    t.date     "fecha"
+    t.float    "monto"
+    t.integer  "property_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "leases", :force => true do |t|
     t.integer  "num_int"

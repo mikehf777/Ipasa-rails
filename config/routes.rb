@@ -1,4 +1,6 @@
 Ipasa::Application.routes.draw do
+  resources :duties
+
   resources :property_services
 
   resources :services
