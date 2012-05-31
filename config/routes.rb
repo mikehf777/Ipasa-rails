@@ -4,6 +4,10 @@ Ipasa::Application.routes.draw do
 
   resources :rents
 
+  resources :property_users
+
+  resources :property_structures
+
   resources :documents
 
   resources :structures
