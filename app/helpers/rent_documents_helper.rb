@@ -1,0 +1,2 @@
+module RentDocumentsHelper
+end

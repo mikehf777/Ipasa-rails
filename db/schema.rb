@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120530221358) do
+ActiveRecord::Schema.define(:version => 20120531152306) do
 
   create_table "documents", :force => true do |t|
     t.string   "nombre"
@@ -72,6 +72,23 @@ ActiveRecord::Schema.define(:version => 20120530221358) do
     t.text     "descripcion"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "rent_documents", :force => true do |t|
+    t.integer  "rent_id"
+    t.integer  "document_id"
+    t.string   "url"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "rents", :force => true do |t|
+    t.date     "fecha_inicio"
+    t.date     "fecha_final"
+    t.integer  "property_user_id"
+    t.integer  "descuento"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "services", :force => true do |t|
