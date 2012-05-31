@@ -1,6 +1,29 @@
 Ipasa::Application.routes.draw do
   root :to => "pages#home"
   match 'contacto', :to => "pages#contacto"
+
+  resources :rent_documents
+
+  resources :rents
+
+  resources :invoices
+
+  resources :surcharges
+
+  resources :property_users
+
+  resources :property_structures
+
+  resources :documents
+
+  resources :structures
+
+  resources :duties
+
+  resources :property_services
+
+  resources :services
+
   resources :videos
 
   resources :leases
