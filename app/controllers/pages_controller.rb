@@ -1,9 +1,9 @@
 class PagesController < ApplicationController
   def home
   @titulo = "Home"
-  echo "Hola Mundo!"
+  puts "Hola Mundo!"
   end
-
+  
   def contacto
   @titulo= "Contacto"
   end
