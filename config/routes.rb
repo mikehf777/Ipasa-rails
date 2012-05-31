@@ -1,5 +1,8 @@
 Ipasa::Application.routes.draw do
+
   resources :documents
+
+  resources :structures
 
   resources :duties
 
