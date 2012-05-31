@@ -11,9 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+
 ActiveRecord::Schema.define(:version => 20120531152306) do
 
 ActiveRecord::Schema.define(:version => 20120531150906) do
+
+ActiveRecord::Schema.define(:version => 20120531152404) do
 
   create_table "documents", :force => true do |t|
     t.string   "nombre"
@@ -76,7 +79,6 @@ ActiveRecord::Schema.define(:version => 20120531150906) do
     t.datetime "updated_at",  :null => false
   end
 
-<<<<<<< HEAD
   create_table "rent_documents", :force => true do |t|
     t.integer  "rent_id"
     t.integer  "document_id"
@@ -92,7 +94,6 @@ ActiveRecord::Schema.define(:version => 20120531150906) do
     t.integer  "descuento"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
-=======
   create_table "property_structures", :force => true do |t|
     t.integer  "property_id"
     t.integer  "structure_id"
@@ -106,7 +107,7 @@ ActiveRecord::Schema.define(:version => 20120531150906) do
     t.integer  "user_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
->>>>>>> d5e368267a8aadce121d4e36f89f7f8b18fc4bf5
+
   end
 
   create_table "services", :force => true do |t|
@@ -117,6 +118,14 @@ ActiveRecord::Schema.define(:version => 20120531150906) do
 
   create_table "structures", :force => true do |t|
     t.string   "nombre"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "surcharges", :force => true do |t|
+    t.string   "folio"
+    t.float    "monto"
+    t.integer  "invoice_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
