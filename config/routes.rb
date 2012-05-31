@@ -1,5 +1,7 @@
 Ipasa::Application.routes.draw do
 
+  resources :invoices
+
   resources :surcharges
 
   resources :property_users
