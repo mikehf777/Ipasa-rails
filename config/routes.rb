@@ -1,4 +1,6 @@
 Ipasa::Application.routes.draw do
+  root :to => "pages#home"
+  match 'contacto', :to => "pages#contacto"
   resources :videos
 
   resources :leases
