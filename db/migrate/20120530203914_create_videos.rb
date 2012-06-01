@@ -3,7 +3,7 @@ class CreateVideos < ActiveRecord::Migration
     create_table :videos do |t|
       t.string :url
       t.integer :property_id
-
+      t.text :descripcion
       t.timestamps
     end
   end

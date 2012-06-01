@@ -9,3 +9,15 @@ two:
   property_id: 1
   descripcion: MyText
   ruta: MyText
+# == Schema Information
+#
+# Table name: photos
+#
+#  id          :integer         not null, primary key
+#  property_id :integer
+#  descripcion :text
+#  ruta        :text
+#  created_at  :datetime        not null
+#  updated_at  :datetime        not null
+#
+

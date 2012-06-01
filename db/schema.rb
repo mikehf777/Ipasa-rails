@@ -11,13 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120531152306) do
-
-ActiveRecord::Schema.define(:version => 20120531150906) do
-
-ActiveRecord::Schema.define(:version => 20120531152404) do
-
-ActiveRecord::Schema.define(:version => 20120531153106) do
+ActiveRecord::Schema.define(:version => 20120601191956) do
 
   create_table "documents", :force => true do |t|
     t.string   "nombre"
@@ -40,6 +34,19 @@ ActiveRecord::Schema.define(:version => 20120531153106) do
     t.integer  "rent_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+  end
+
+  create_table "lease_structures", :force => true do |t|
+    t.integer  "structure_id"
+    t.integer  "cantidad"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "lease_users", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "leases", :force => true do |t|
@@ -68,13 +75,16 @@ ActiveRecord::Schema.define(:version => 20120531153106) do
   end
 
   create_table "properties", :force => true do |t|
+    t.integer  "locality_id"
+    t.integer  "user_id"
     t.string   "nombre"
+    t.string   "propietario"
     t.integer  "num_ext"
     t.text     "direccion"
     t.string   "google"
     t.text     "descripcion"
     t.boolean  "ofertada"
-    t.integer  "locality_id"
+    t.string   "catastro"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "clave"
@@ -98,26 +108,18 @@ ActiveRecord::Schema.define(:version => 20120531153106) do
   end
 
   create_table "rents", :force => true do |t|
+    t.integer  "leaseuser_id"
     t.date     "fecha_inicio"
-    t.date     "fecha_final"
-    t.integer  "property_user_id"
-    t.integer  "descuento"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-  create_table "property_structures", :force => true do |t|
-    t.integer  "property_id"
-    t.integer  "structure_id"
-    t.integer  "cantidad"
+    t.date     "fecha_fin"
+    t.float    "descuento"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
 
-  create_table "property_users", :force => true do |t|
-    t.integer  "property_id"
-    t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-
+  create_table "roles", :force => true do |t|
+    t.string   "nombre"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "services", :force => true do |t|
@@ -147,9 +149,30 @@ ActiveRecord::Schema.define(:version => 20120531153106) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "user_roles", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "nombre"
+    t.string   "apellidos"
+    t.string   "telefono"
+    t.string   "celular"
+    t.boolean  "sexo"
+    t.string   "email"
+    t.string   "encrypted_password"
+    t.string   "salt"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
   create_table "videos", :force => true do |t|
     t.string   "url"
     t.integer  "property_id"
+    t.text     "descripcion"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

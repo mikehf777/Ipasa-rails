@@ -1,18 +1,36 @@
 Ipasa::Application.routes.draw do
+  resources :rents
+
+  resources :lease_structures
+
+  resources :user_roles
+
+  resources :roles
+
+  resources :users
+
+  resources :lease_users
+
   root :to => "pages#home"
   match 'contacto', :to => "pages#contacto"
+  match 'nueva_propiedad', :to => "properties#new"
+  match "nueva_factura", :to => "invoices#new"
+  match "nueva_localidad",:to => "localities#new"
+  match "subir_documento", :to => "documents#new"
+  match "nuevo_inmueble", :to => "leases#new"
+  match "nueva_foto", :to => "photos#new"
+  match "nuevo_servicio", :to => "services#new"
+  match "nueva_renta", :to => "rents#new"
+  match "nueva_estructura", :to => "structures#new"
+  match "nuevo_recargo", :to => "surcharges#new"
+  
+
 
   resources :rent_documents
-
-  resources :rents
 
   resources :invoices
 
   resources :surcharges
-
-  resources :property_users
-
-  resources :property_structures
 
   resources :documents
 

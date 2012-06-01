@@ -6,19 +6,27 @@
   <%= render "layouts/stylesheets"%>
 </head>
 <body>
-<div class="container">
-	<%= render 'layouts/header'%>
-<section>
-	<% flash.each do |key, value| %>
-	<h1><div class="flash <%= key %>"><%= value %></div></h1>
-	<% end %>
+<div class="container-fluid">
+<%= render 'layouts/header'%>
+	<div class="row-fluid">
+  		<div class="span2">
+  		<%= render 'layouts/lateralmenu'%>
+  		</div>
+  		<div class="span10">	
+			<section>
+			<% flash.each do |key, value| %>
+			<h1><div class="flash <%= key %>"><%= value %></div></h1>
+			<% end %>
 
-	<%= yield %>
-</section>
-<footer>
-	<%= render 'layouts/footer'%>
-	<%= debug(params) if Rails.env.development? %>
-</footer>
+			<%= yield %>
+			</section>
+		</div>
+		</div>
+		
+		<footer>
+			<%= render 'layouts/footer'%>
+			<%= debug(params) if Rails.env.development? %>
+		</footer>
 </div>
 
 </body>

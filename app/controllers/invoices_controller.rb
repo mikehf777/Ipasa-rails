@@ -25,7 +25,7 @@ class InvoicesController < ApplicationController
   # GET /invoices/new.json
   def new
     @invoice = Invoice.new
-
+    @titulo = "Factura"
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @invoice }

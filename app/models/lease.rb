@@ -1,3 +1,22 @@
 class Lease < ActiveRecord::Base
-  attr_accessible :descripcion, :num_int, :precio, :property_id, :status_renta, :type_id
+  attr_accessible :descripcion, :num_int, :precio, :property_id, :status_renta, :type_id , :user_id
+  belongs_to :type
+  has_many :structures , through: :leasestructures
+  has_many :users , through: :leaseusers
+
 end
+# == Schema Information
+#
+# Table name: leases
+#
+#  id           :integer         not null, primary key
+#  num_int      :integer
+#  status_renta :boolean
+#  type_id      :integer
+#  precio       :float
+#  descripcion  :text
+#  property_id  :integer
+#  created_at   :datetime        not null
+#  updated_at   :datetime        not null
+#
+

@@ -6,9 +6,9 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:leaseuser_id) %></th>
       <th><%= model_class.human_attribute_name(:fecha_inicio) %></th>
-      <th><%= model_class.human_attribute_name(:fecha_final) %></th>
-      <th><%= model_class.human_attribute_name(:property_user_id) %></th>
+      <th><%= model_class.human_attribute_name(:fecha_fin) %></th>
       <th><%= model_class.human_attribute_name(:descuento) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -18,9 +18,9 @@
     <% @rents.each do |rent| %>
       <tr>
         <td><%= link_to rent.id, rent_path(rent) %></td>
+        <td><%= rent.leaseuser_id %></td>
         <td><%= rent.fecha_inicio %></td>
-        <td><%= rent.fecha_final %></td>
-        <td><%= rent.property_user_id %></td>
+        <td><%= rent.fecha_fin %></td>
         <td><%= rent.descuento %></td>
         <td><%=l rent.created_at %></td>
         <td>
