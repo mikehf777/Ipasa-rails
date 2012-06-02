@@ -1,7 +1,10 @@
 class User < ActiveRecord::Base
   attr_accessible :apellidos, :celular, :email, :encrypted_password, :nombre, :salt, :sexo, :telefono
-  has_many :leases , through: :leaseusers
-  has_many :roles , through: :userroles
+  has_many :lease_users
+  has_many :user_roles
+  has_many :properties
+  has_many :leases , through: :lease_users
+  has_many :roles , through: :user_roles
 
 end
 # == Schema Information

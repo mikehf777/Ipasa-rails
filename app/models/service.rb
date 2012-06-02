@@ -1,6 +1,7 @@
 class Service < ActiveRecord::Base
   attr_accessible :nombre
-  has_many :properties , through: :propertyservices
+  has_many :property_services
+  has_many :properties , through: :property_services
 end
 # == Schema Information
 #

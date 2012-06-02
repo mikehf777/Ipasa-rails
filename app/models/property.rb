@@ -1,10 +1,12 @@
 class Property < ActiveRecord::Base
   attr_accessible :descripcion, :direccion, :google, :locality_id, :nombre, :num_ext, :ofertada , :user_id , :catastro
   belongs_to :locality
+  belongs_to :user
   has_many :duties
   has_many :videos
   has_many :photos
-  has_many :services , through: :propertyservices   
+  has_many :property_services
+  has_many :services , through: :property_services   
   has_many :leases
 end
 # == Schema Information

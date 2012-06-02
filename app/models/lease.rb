@@ -1,9 +1,11 @@
 class Lease < ActiveRecord::Base
   attr_accessible :descripcion, :num_int, :precio, :property_id, :status_renta, :type_id , :user_id
   belongs_to :type
-  has_many :structures , through: :leasestructures
-  has_many :users , through: :leaseusers
-
+  belongs_to :property
+  has_many :lease_structures
+  has_many :lease_users
+  has_many :structures , through: :lease_structures
+  has_many :users , through: :lease_users
 end
 # == Schema Information
 #

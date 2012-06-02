@@ -1,6 +1,7 @@
 class Structure < ActiveRecord::Base
   attr_accessible :nombre
-  has_many :leases , through: :leasestructures
+  has_many :lease_structures
+  has_many :leases , through: :lease_structures
 end
 # == Schema Information
 #

@@ -1,6 +1,7 @@
 class Role < ActiveRecord::Base
   attr_accessible :nombre
-  has_many :users , through: :userroles
+  has_many :user_roles
+  has_many :users , through: :user_roles
 
 end
 # == Schema Information
