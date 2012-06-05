@@ -23,7 +23,8 @@ Ipasa::Application.routes.draw do
   match "nueva_renta", :to => "rents#new"
   match "nueva_estructura", :to => "structures#new"
   match "nuevo_recargo", :to => "surcharges#new"
-  match "nuevo_impuesto", :to => "duties#new"       
+  match "nuevo_impuesto", :to => "duties#new"
+  match "propiedades" , :to => "properties#index"       
 
 
   resources :rent_documents

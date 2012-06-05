@@ -25,7 +25,7 @@ class PropertiesController < ApplicationController
   # GET /properties/new.json
   def new
     @property = Property.new
-
+    @localities = Locality.all
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @property }

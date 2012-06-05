@@ -1,4 +1,4 @@
-<h1>Subir Propiedad</h1>
+                         <h1>Nueva Propiedad</h1>
 <%= form_for @property, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
     <%= f.label :nombre, :class => 'control-label' %>
@@ -15,7 +15,7 @@
   <div class="control-group">
     <%= f.label :direccion, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_area :direccion, :class => 'text_area' %>
+      <%= f.text_area :direccion, :class => 'text_area', :cols  => '300', :rows => '10' %>
     </div>
   </div>
   <div class="control-group">
@@ -27,7 +27,7 @@
   <div class="control-group">
     <%= f.label :descripcion, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_area :descripcion, :class => 'text_area' %>
+      <%= f.text_area :descripcion, :class => 'text_area', :cols  => '300', :rows => '10' %>
     </div>
   </div>
   <div class="control-group">
@@ -39,7 +39,7 @@
   <div class="control-group">
     <%= f.label :locality_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :locality_id, :class => 'number_field' %>
+     <%= select("property", "locality_id", Locality.all.collect {|l| [ l.nombre, l.id ] }, {:prompt => 'Seleccione una Localidad'}) %>
     </div>
   </div>
 
