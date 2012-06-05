@@ -1,0 +1,1 @@
+$('#myTab a').click (e)->e.preventDefault(); $('#myTab').html("<%= escape_javascript(render('properties')) %>"); 

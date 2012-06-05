@@ -80,4 +80,8 @@ class PropertiesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def tab
+
+  end
+  
 end
