@@ -1,4 +1,10 @@
-<%- model_class = Property.new.class -%>  
+
+<ul class="nav nav-tabs">
+  <li class="active"><%= link_to "Lista", properties_path(:format => :js) , :remote => true , 'data-toggle' => 'tab' %></li>
+  <li><%= link_to "Nueva  Propiedad", {:controller => "properties", :action => "new" , :format => :js}, :remote => true , 'data-toggle' => 'tab'%></li>
+</ul>
+ <div id="content" class="tab-pane active"> 
+ 	<%- model_class = Property.new.class -%>  
   <div class="page-header">
   <h1>Listado de Propiedades</h1>
 </div>
@@ -36,3 +42,5 @@
 </table>
 </div>
 
+ </div>
+ 

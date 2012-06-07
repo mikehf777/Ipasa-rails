@@ -83,10 +83,9 @@ class PropertiesController < ApplicationController
     end
   end
   def tab
-
+    @properties = Property.all
      respond_to do |format|
       format.html
-      format.js
     end
   end
 
