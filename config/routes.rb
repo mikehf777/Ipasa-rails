@@ -13,7 +13,6 @@ Ipasa::Application.routes.draw do
 
   root :to => "pages#home"
   match 'contacto', :to => "pages#contacto"
-  match 'nueva_propiedad', :to => "properties#new"
   match "nueva_factura", :to => "invoices#new"
   match "nueva_localidad",:to => "localities#new"
   match "subir_documento", :to => "documents#new"
@@ -56,6 +55,7 @@ Ipasa::Application.routes.draw do
   resources :properties do
     member do
     get 'properties'
+    get 'new'
   end
 end
   # The priority is based upon order of creation:
