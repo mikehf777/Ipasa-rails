@@ -7,6 +7,7 @@ class PropertiesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @properties }
+      format.js
     end
   end
 
@@ -27,8 +28,9 @@ class PropertiesController < ApplicationController
     @property = Property.new
     @localities = Locality.all
     respond_to do |format|
-      format.html # new.html.erb
+      format.html  # new.html.erb
       format.json { render json: @property }
+      format.js
     end
   end
 
@@ -82,6 +84,10 @@ class PropertiesController < ApplicationController
   end
   def tab
 
+     respond_to do |format|
+      format.html
+      format.js
+    end
   end
-  
+
 end

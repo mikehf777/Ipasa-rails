@@ -1,5 +1,12 @@
 <%- model_class = Property.new.class -%>
-<div class="page-header">
+<%= render :partial => "tab" %>
+  <div id="content" class="tab-pane active">  
+  
+      
+  </div>
+
+<div id="propiedades" class="tab-pane active">
+  <div class="page-header">
   <h1>Listado de Propiedades</h1>
 </div>
 <table class="table table-striped">
@@ -34,5 +41,4 @@
     <% end %>
   </tbody>
 </table>
-
-<%= link_to 'Nueva Propiedad' , new_property_path, :class => 'btn btn-primary' %>
+</div>

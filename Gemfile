@@ -46,4 +46,4 @@ gem 'webrat'
 gem 'factory_girl_rails'
 end
 
-gem 'less-rails-bootstrap'
+gem 'thin'

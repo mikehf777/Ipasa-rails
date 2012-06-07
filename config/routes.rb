@@ -24,7 +24,7 @@ Ipasa::Application.routes.draw do
   match "nueva_estructura", :to => "structures#new"
   match "nuevo_recargo", :to => "surcharges#new"
   match "nuevo_impuesto", :to => "duties#new"
-  match "propiedades" , :to => "properties#tab"       
+  match "propiedades" , :to => "properties#index"       
 
 
   resources :rent_documents
@@ -53,8 +53,11 @@ Ipasa::Application.routes.draw do
 
   resources :types
 
-  resources :properties
-
+  resources :properties do
+    member do
+    get 'properties'
+  end
+end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
