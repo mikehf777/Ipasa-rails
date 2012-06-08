@@ -1,4 +1,6 @@
 class PropertiesController < ApplicationController
+
+
   # GET /properties
   # GET /properties.json
   def index
@@ -37,6 +39,10 @@ class PropertiesController < ApplicationController
   # GET /properties/1/edit
   def edit
     @property = Property.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # POST /properties
@@ -62,7 +68,7 @@ class PropertiesController < ApplicationController
 
     respond_to do |format|
       if @property.update_attributes(params[:property])
-        format.html { redirect_to @property, notice: 'Property was successfully updated.' }
+        format.html { redirect_to action: "index" }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -88,5 +94,7 @@ class PropertiesController < ApplicationController
       format.html
     end
   end
+
+
 
 end

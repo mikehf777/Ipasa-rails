@@ -1,4 +1,4 @@
-class Property < ActiveRecord::Base
+class Property < ActiveRecord::Base	
   attr_accessible :descripcion, :direccion, :google, :locality_id, :nombre, :num_ext, :ofertada , :user_id , :catastro
   belongs_to :locality
   belongs_to :user
