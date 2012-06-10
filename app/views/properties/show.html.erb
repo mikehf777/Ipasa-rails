@@ -1,33 +1,23 @@
-<%- model_class = @property.class -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+  <h1><%= @property.nombre %></h1>
 </div>
-
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:nombre) %>:</strong></dt>
-  <dd><%= @property.nombre %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:num_ext) %>:</strong></dt>
-  <dd><%= @property.num_ext %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:direccion) %>:</strong></dt>
-  <dd><%= @property.direccion %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:google) %>:</strong></dt>s
-  <dd><%= @property.google %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:descripcion) %>:</strong></dt>
-  <dd><%= @property.descripcion %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:ofertada) %>:</strong></dt>
-  <dd><%= @property.ofertada %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:locality_id) %>:</strong></dt>
-  <dd><%= @property.locality_id %></dd>
-</dl>
-
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              properties_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_property_path(@property), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              property_path(@property),
-              :method => 'delete',
-              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
-              :class => 'btn btn-danger' %>
+<div class= "well">
+  <strong>Nombre :</strong>
+  <%= @property.nombre %></br>
+  <strong>Numero Exterior :</strong>
+  <%= @property.num_ext %></br>
+  <strong>Direccion :</strong>
+  <%= @property.direccion %></br>
+  <strong>Direccion Gooogle :</strong>
+  <%= @property.google %></br>
+  <strong>Descripcion :</strong>
+  <%= @property.descripcion %></br>
+  <strong>¿En oferta? :</strong>
+  <% if @property.ofertada == true %>
+          Si
+          <% else %>
+          No
+          <% end %>
+  </br><strong>Localidad :</strong>
+  <%= @property.locality.nombre %>
 </div>

@@ -47,8 +47,6 @@ Ipasa::Application.routes.draw do
 
   resources :localities
 
-  resources :photos
-
   resources :types
 
   resources :properties do

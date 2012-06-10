@@ -1,5 +1,5 @@
 class Property < ActiveRecord::Base	
-  attr_accessible :descripcion, :direccion, :google, :locality_id, :nombre, :num_ext, :ofertada , :user_id , :catastro
+  attr_accessible :descripcion, :direccion, :google, :locality_id, :nombre, :num_ext, :ofertada , :user_id , :catastro , :pictures_attributes 
   belongs_to :locality
   belongs_to :user
   has_many :duties
@@ -8,6 +8,9 @@ class Property < ActiveRecord::Base
   has_many :property_services
   has_many :services , through: :property_services   
   has_many :leases
+  ##===Atributos especificos para el uso de paperclip
+  has_many :pictures
+  accepts_nested_attributes_for :pictures , :allow_destroy => true
 end
 # == Schema Information
 #

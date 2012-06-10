@@ -33,14 +33,15 @@
         </td>
         <td><%= property.locality.nombre %></td>
         <td>
-          <%= link_to 'Editar', edit_property_path(property), :class => 'btn btn-mini' %>
+          <%= link_to 'Mostrar', property_path(property), {:remote => true , 'data-toggle' =>  "modal", 'data-target' => "#modal-window", 'data-keyboard' => true , 'data-backdrop' => true , :class => "btn btn-mini btn-success"} %>
+          <%= link_to 'Editar', edit_property_path(property) , {:remote => true , 'data-toggle' =>  "modal", 'data-target' => "#modal-window", 'data-keyboard' => true , 'data-backdrop' => true , :class => "btn btn-mini btn-primary"}  %>
           <%= link_to 'Eliminar', property_path(property), :method => :delete,:confirm => '¿Estas Seguro?', :class => 'btn btn-mini btn-danger' %>
+
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 </div>
-
  </div>
  

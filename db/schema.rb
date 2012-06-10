@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120601191956) do
+ActiveRecord::Schema.define(:version => 20120610183543) do
 
   create_table "documents", :force => true do |t|
     t.string   "nombre"
@@ -72,6 +72,16 @@ ActiveRecord::Schema.define(:version => 20120601191956) do
     t.text     "ruta"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "pictures", :force => true do |t|
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_upload_date"
+    t.integer  "property_id"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
   create_table "properties", :force => true do |t|

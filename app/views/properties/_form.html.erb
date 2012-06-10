@@ -1,5 +1,5 @@
 
-<%= form_for @property, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @property, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
   <div class="control-group">
     <%= f.label :nombre, :class => 'control-label' %>
     <div class="controls">
@@ -42,6 +42,27 @@
      <%= select("property", "locality_id", Locality.all.collect {|l| [ l.nombre, l.id ] }, {:prompt => 'Seleccione una Localidad'}) %>
     </div>
   </div>
+
+  <%= f.fields_for :pictures do |picture_fields| %>
+  <% if picture_fields.object.new_record? %>
+      <div>
+       <%= picture_fields.file_field :picture %>
+      </div>
+    <%end%>
+
+  <%end%>
+
+  <%= f.fields_for :pictures do |picture_fields| %>
+  <% unless picture_fields.object.new_record? %>
+      <div class="well">
+        <h2>Eliminar Imagenes</h2>
+       <%= link_to image_tag(picture_fields.object.picture.url(:thumb)) , picture_fields.object.picture.url(:original) %>
+       <%= picture_fields.check_box :_destroy %>
+      </div>
+    <%end%>
+
+  <%end%>
+
 
   <div class="form-actions">
     <%= f.submit "Subir Propiedad", :class => 'btn btn-primary' %>

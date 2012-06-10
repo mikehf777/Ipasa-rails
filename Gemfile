@@ -21,6 +21,7 @@ end
 #subir imagenes 
 gem 'jquery-rails'
 gem "paperclip", "~> 3.0"
+gem "nifty-generators", :group => :development
 gem 'gravatar_image_tag'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

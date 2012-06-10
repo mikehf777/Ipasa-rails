@@ -12,7 +12,8 @@
   		<div class="span2">
   		<%= render 'layouts/lateralmenu'%>
   		</div>
-  		<div class="span10">	
+  		<div class="span10">
+  		<%= render  "layouts/fancy" %>	
 			<section>
 			<% flash.each do |key, value| %>
 			<h1><div class="flash <%= key %>"><%= value %></div></h1>
