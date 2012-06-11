@@ -66,19 +66,12 @@ ActiveRecord::Schema.define(:version => 20120610183543) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "photos", :force => true do |t|
-    t.integer  "property_id"
-    t.text     "descripcion"
-    t.text     "ruta"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
   create_table "pictures", :force => true do |t|
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_upload_date"
+    t.string   "picture_descripcion"
     t.integer  "property_id"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false

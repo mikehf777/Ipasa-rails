@@ -9,8 +9,8 @@ class Property < ActiveRecord::Base
   has_many :services , through: :property_services   
   has_many :leases
   ##===Atributos especificos para el uso de paperclip
-  has_many :pictures
-  accepts_nested_attributes_for :pictures , :allow_destroy => true
+  has_many :pictures , :dependent => :destroy
+  accepts_nested_attributes_for :pictures , :reject_if => lambda { |a| a[:picture_descripcion].blank? }, :allow_destroy => true
 end
 # == Schema Information
 #

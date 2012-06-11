@@ -47,6 +47,11 @@
   <% if picture_fields.object.new_record? %>
       <div>
        <%= picture_fields.file_field :picture %>
+       <div class="control-group">
+    <%= picture_fields.label "Descripcion de la imagen", :class => 'control-label' %>
+    <div class="controls">
+      <%= picture_fields.text_field :picture_descripcion, :class => 'text_field' %>
+    </div>
       </div>
     <%end%>
 
@@ -57,6 +62,7 @@
       <div class="well">
         <h2>Eliminar Imagenes</h2>
        <%= link_to image_tag(picture_fields.object.picture.url(:thumb)) , picture_fields.object.picture.url(:original) %>
+       
        <%= picture_fields.check_box :_destroy %>
       </div>
     <%end%>

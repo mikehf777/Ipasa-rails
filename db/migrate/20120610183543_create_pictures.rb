@@ -5,8 +5,8 @@ class CreatePictures < ActiveRecord::Migration
       t.string :picture_content_type
       t.integer :picture_file_size
       t.datetime :picture_upload_date
+      t.string :picture_descripcion
       t.integer :property_id
-
       t.timestamps
     end
   end
