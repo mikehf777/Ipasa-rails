@@ -3,14 +3,6 @@ Ipasa::Application.routes.draw do
 
   resources :lease_structures
 
-  resources :user_roles
-
-  resources :roles
-
-  resources :users
-
-  resources :lease_users
-
   root :to => "pages#home"
   match 'contacto', :to => "pages#contacto"
   match "nueva_factura", :to => "invoices#new"

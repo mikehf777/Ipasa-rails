@@ -5,7 +5,6 @@ class Lease < ActiveRecord::Base
   has_many :lease_structures
   has_many :lease_users
   has_many :structures , through: :lease_structures
-  has_many :users , through: :lease_users
 end
 # == Schema Information
 #
