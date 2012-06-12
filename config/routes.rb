@@ -1,4 +1,6 @@
 Ipasa::Application.routes.draw do
+  devise_for :users
+
   resources :rents
 
   resources :lease_structures

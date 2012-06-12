@@ -1,34 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= titulo%></title>
-  <%= csrf_meta_tags %>
-  <%= render "layouts/stylesheets"%>
-</head>
-<body>
-<div class="container-fluid">
-<%= render 'layouts/header'%>
-	<div class="row-fluid">
-  		<div class="span2">
-  		<%= render 'layouts/lateralmenu'%>
-  		</div>
-  		<div class="span10">
-  		<%= render  "layouts/fancy" %>	
-			<section>
-			<% flash.each do |key, value| %>
-			<h1><div class="flash <%= key %>"><%= value %></div></h1>
-			<% end %>
-
-			<%= yield %>
-			</section>
+	<head>
+	  <title><%= titulo %></title>
+	  <%= csrf_meta_tags %>
+	  <%= render "layouts/stylesheets"%>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<%= render 'layouts/header'%>
+			<div class="row-fluid">
+		  	<div class="span2">
+		  		<%= render 'layouts/lateralmenu'%>
+		  	</div>
+		  	<div class="span10">
+		  		<%= render  "layouts/fancy" %>	
+					<section>
+						<%= render 'layouts/alerts' %>
+						<%= yield %>
+					</section>
+				</div>
+			</div>
+			<footer>
+				<%= render 'layouts/footer'%>
+				<%= debug(params) if Rails.env.development? %>
+			</footer>
 		</div>
-		</div>
-		
-		<footer>
-			<%= render 'layouts/footer'%>
-			<%= debug(params) if Rails.env.development? %>
-		</footer>
-</div>
-
-</body>
+	</body>
 </html>

@@ -1,0 +1,9 @@
+<div class="pull-right">
+	<% if user_signed_in?%>
+    <i class="icon-user"></i>
+      Logueado como <%= current_user.email %>
+      <%= link_to "Cerrar sesión", destroy_user_session_path, :method => :delete %>
+    <% else %>
+      <%= link_to "Sign in" %> or <%= link_to "Sign up" %>
+  <% end %>
+</div>
