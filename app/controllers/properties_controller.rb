@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-
+  before_filter :authenticate_user!, :except => [:tab, :show, :index]
 
   # GET /properties
   # GET /properties.json
