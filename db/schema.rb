@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20120611184537) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_upload_date"
+    t.string   "picture_descripcion"
     t.integer  "property_id"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false

@@ -21,3 +21,9 @@
   </br><strong>Localidad :</strong>
   <%= @property.locality.nombre %>
 </div>
+<div class="well">
+  <h1> Imagenes Asociadas a la Propiedad</h1>
+ <% @property.pictures.each do |image| %>
+ <%= link_to image_tag(image.picture.url(:thumb)) , image.picture.url(:original) %>
+<% end %>
+</div>

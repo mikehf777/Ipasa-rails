@@ -16,7 +16,6 @@ class PropertiesController < ApplicationController
   # GET /properties/1.json
   def show
     @property = Property.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @property }
@@ -28,7 +27,7 @@ class PropertiesController < ApplicationController
   # GET /properties/new.json
   def new
     @property = Property.new
-    5.times { @property.pictures.build }
+    6.times { @property.pictures.build }
 
     @localities = Locality.all
     respond_to do |format|
@@ -41,7 +40,7 @@ class PropertiesController < ApplicationController
   # GET /properties/1/edit
   def edit
     @property = Property.find(params[:id])
-    5.times { @property.pictures.build }
+    6.times { @property.pictures.build }
     respond_to do |format|
       format.html
       format.js
@@ -68,7 +67,6 @@ class PropertiesController < ApplicationController
   # PUT /properties/1.json
   def update
     @property = Property.find(params[:id])
-
     respond_to do |format|
       if @property.update_attributes(params[:property])
         format.html { redirect_to action: "tab" }
