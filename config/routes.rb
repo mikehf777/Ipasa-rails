@@ -1,13 +1,4 @@
 Ipasa::Application.routes.draw do
-<<<<<<< HEAD
-=======
-  devise_for :users
-
-  resources :rents
-
-  resources :lease_structures
-
->>>>>>> d019a217396b6d0e33ebd74df90eb48b12ecd059
   root :to => "pages#home"
   match 'contacto', :to => "pages#contacto"
   match "nueva_factura", :to => "invoices#new"

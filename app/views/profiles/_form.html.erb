@@ -24,7 +24,37 @@
       <%= select("profile", "property_id", Property.all.collect {|l| [ l.nombre, l.id ] }, {:prompt => 'Seleccione una Propiedad'}) %>
     </div>
   </div>
+  <%= f.fields_for :photos do |photo_fields| %>
+  <% if photo_fields.object.new_record? %>
+      <div>
+       <%= photo_fields.file_field :photo %>
+       <div class="control-group">
+    <%= photo_fields.label "Descripcion de la imagen", :class => 'control-label' %>
+    <div class="controls">
+      <%= photo_fields.text_field :photo_descripcion, :class => 'text_field' %>
+    </div>
+      </div>
+    <%end%>
 
+  <%end%>
+
+  <div class="well">
+  <h2>Eliminar y Editar Imagenes</h2>
+  <%= f.fields_for :photos do |photo_fields| %>
+  <% unless photo_fields.object.new_record? %>
+       <%= link_to image_tag(photo_fields.object.photo.url(:thumb)) , photo_fields.object.photo.url(:original) %>
+       
+       <%= photo_fields.check_box :_destroy %>
+      <div class="control-group">
+      <%= photo_fields.label "Descripcion de la imagen", :class => 'control-label' %>
+      <div class="controls">
+      <%= photo_fields.text_field :photo_descripcion, :class => 'text_field' %>
+    </div>
+  </div>
+    <%end%>
+  </div>
+  <%end%>
+  </div>
   <div class="form-actions">
     <%= f.submit "Subir Perfil", :class => 'btn btn-primary' %>
   </div>

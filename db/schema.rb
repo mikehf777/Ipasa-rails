@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20120612172301) do
-=======
-ActiveRecord::Schema.define(:version => 20120611184537) do
->>>>>>> d019a217396b6d0e33ebd74df90eb48b12ecd059
+ActiveRecord::Schema.define(:version => 20120612213129) do
 
   create_table "documents", :force => true do |t|
     t.string   "nombre"
@@ -62,6 +58,16 @@ ActiveRecord::Schema.define(:version => 20120611184537) do
     t.string   "nombre"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.string   "photo_descripcion"
+    t.integer  "profile_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "pictures", :force => true do |t|
@@ -148,15 +154,8 @@ ActiveRecord::Schema.define(:version => 20120611184537) do
 
   create_table "types", :force => true do |t|
     t.string   "nombre"
-<<<<<<< HEAD
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-=======
-    t.text     "descripcion"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -177,7 +176,6 @@ ActiveRecord::Schema.define(:version => 20120611184537) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
->>>>>>> d019a217396b6d0e33ebd74df90eb48b12ecd059
   create_table "videos", :force => true do |t|
     t.string   "url"
     t.integer  "property_id"

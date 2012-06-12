@@ -27,6 +27,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/new.json
   def new
     @profile = Profile.new
+    6.times { @profile.photos.build }
     @titulo = "Nuevo  Perfil"
     respond_to do |format|
       format.html # new.html.erb
@@ -38,6 +39,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1/edit
   def edit
     @profile = Profile.find(params[:id])
+    6.times { @profile.photos.build }
     @titulo = "Actualizar Perfil"
     respond_to do |format|
       format.html
@@ -52,7 +54,7 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
+        format.html { redirect_to action:"tab", notice: 'Profile was successfully created.' }
         format.json { render json: @profile, status: :created, location: @profile }
       else
         format.html { render action: "new" }

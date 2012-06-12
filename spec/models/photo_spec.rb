@@ -1,9 +1,7 @@
-require 'test_helper'
+require 'spec_helper'
 
-class PhotoTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+describe Photo do
+  pending "add some examples to (or delete) #{__FILE__}"
 end
 # == Schema Information
 #
