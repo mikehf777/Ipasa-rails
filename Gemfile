@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.3'
 gem 'will_paginate'
 gem 'devise'
+gem 'jquery-rails'
+gem "paperclip", "~> 3.0"
+gem 'gravatar_image_tag'
 
 # Gems used in development environment
 group :development do
