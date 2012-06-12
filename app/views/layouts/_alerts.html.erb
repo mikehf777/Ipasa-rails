@@ -1,0 +1,13 @@
+<% flash.each do |key, value| %>
+	<% case key
+		when :alert
+			alert = "alert"
+		when :error
+			alert = "alert alert-error"
+		when :notice
+			alert = "alert alert-info"
+		when :success
+			alert = "alert alert-success"
+	end %>
+	<h1><div class="<%= alert %>"><%= value %></div></h1>
+<% end %>
