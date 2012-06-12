@@ -8,6 +8,7 @@ class Property < ActiveRecord::Base
   has_many :property_services
   has_many :services , through: :property_services   
   has_many :leases
+  has_many :profiles
   ##===Atributos especificos para el uso de paperclip
   has_many :pictures , :dependent => :destroy
   accepts_nested_attributes_for :pictures , 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120610183543) do
+ActiveRecord::Schema.define(:version => 20120612172301) do
 
   create_table "documents", :force => true do |t|
     t.string   "nombre"
@@ -43,12 +43,6 @@ ActiveRecord::Schema.define(:version => 20120610183543) do
     t.datetime "updated_at",   :null => false
   end
 
-  create_table "lease_users", :force => true do |t|
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "leases", :force => true do |t|
     t.integer  "num_int"
     t.boolean  "status_renta"
@@ -75,6 +69,15 @@ ActiveRecord::Schema.define(:version => 20120610183543) do
     t.integer  "property_id"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.string   "nombre"
+    t.string   "descripcion"
+    t.integer  "type_id"
+    t.integer  "property_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "properties", :force => true do |t|
@@ -119,12 +122,6 @@ ActiveRecord::Schema.define(:version => 20120610183543) do
     t.datetime "updated_at",   :null => false
   end
 
-  create_table "roles", :force => true do |t|
-    t.string   "nombre"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "services", :force => true do |t|
     t.string   "nombre"
     t.datetime "created_at", :null => false
@@ -147,29 +144,8 @@ ActiveRecord::Schema.define(:version => 20120610183543) do
 
   create_table "types", :force => true do |t|
     t.string   "nombre"
-    t.text     "descripcion"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  create_table "user_roles", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "role_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "nombre"
-    t.string   "apellidos"
-    t.string   "telefono"
-    t.string   "celular"
-    t.boolean  "sexo"
-    t.string   "email"
-    t.string   "encrypted_password"
-    t.string   "salt"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
   end
 
   create_table "videos", :force => true do |t|

@@ -1,8 +1,4 @@
 Ipasa::Application.routes.draw do
-  resources :rents
-
-  resources :lease_structures
-
   root :to => "pages#home"
   match 'contacto', :to => "pages#contacto"
   match "nueva_factura", :to => "invoices#new"
@@ -15,7 +11,16 @@ Ipasa::Application.routes.draw do
   match "nueva_estructura", :to => "structures#new"
   match "nuevo_recargo", :to => "surcharges#new"
   match "nuevo_impuesto", :to => "duties#new"
-  match "propiedades" , :to => "properties#tab"       
+  match "propiedades" , :to => "properties#tab"
+  match "perfiles", :to => "profiles#tab"
+
+  resources :profiles
+
+  resources :types
+
+  resources :rents
+
+  resources :lease_structures       
   
   resources :rent_documents
 
@@ -38,8 +43,6 @@ Ipasa::Application.routes.draw do
   resources :leases
 
   resources :localities
-
-  resources :types
 
   resources :properties do
     member do
