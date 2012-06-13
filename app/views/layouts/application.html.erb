@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	  <title><%= titulo %></title>
+	  <title><%= title(yield(:title))%></title>
 	  <%= csrf_meta_tags %>
 	  <%= render "layouts/stylesheets"%>
 	</head>
@@ -16,6 +16,7 @@
 		  		<%= render  "layouts/fancy" %>	
 					<section>
 						<%= render 'layouts/alerts' %>
+						<h2><%= yield(:title) %></h2>
 						<%= yield %>
 					</section>
 				</div>

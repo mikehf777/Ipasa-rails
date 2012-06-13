@@ -1,5 +1,4 @@
-
 $(document).ready(function() {
-$('.modal-body').html("<%= escape_javascript render(:file => 'properties/edit', :formats => [:html])  %>");    
+	$('.modal-body').html("<%= escape_javascript render :partial => 'form' %>");    
 });
 
