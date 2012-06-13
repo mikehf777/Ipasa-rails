@@ -1,6 +1,8 @@
 class Lease < ActiveRecord::Base
-  attr_accessible :descripcion , :num_int , :precio , :status_renta, :user_id , :profile_id 
-  belongs_to :profile
+  attr_accessible :descripcion, :num_int, :precio, :property_id, :status_renta, :type_id , :user_id
+  belongs_to :type
+  belongs_to :property
+  
   has_many :lease_structures
   has_many :lease_users
   has_many :structures , through: :lease_structures
