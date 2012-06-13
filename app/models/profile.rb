@@ -2,6 +2,7 @@ class Profile < ActiveRecord::Base
   attr_accessible :descripcion, :nombre, :type_id , :property_id , :photos_attributes
   belongs_to :property
   belongs_to :type
+  has_many :leases
 
   #paperclip
   has_many :photos , :dependent => :destroy

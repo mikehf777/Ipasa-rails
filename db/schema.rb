@@ -46,10 +46,9 @@ ActiveRecord::Schema.define(:version => 20120612213129) do
   create_table "leases", :force => true do |t|
     t.integer  "num_int"
     t.boolean  "status_renta"
-    t.integer  "type_id"
+    t.integer  "profile_id"
     t.float    "precio"
     t.text     "descripcion"
-    t.integer  "property_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
