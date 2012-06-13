@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-
+  before_filter :authenticate_user!, :except => [:tab, :show, :index]
 
   # GET /properties
   # GET /properties.json
@@ -54,7 +54,7 @@ class PropertiesController < ApplicationController
 
     respond_to do |format|
       if @property.save
-        format.html { redirect_to action:"tab", notice: 'Property was successfully created.' }
+        format.html { redirect_to @property, notice: 'Property was successfully created.' }
         format.json { render json: @property, status: :created, location: @property }
       else
         format.html { render action: "new" }

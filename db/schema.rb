@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120612213129) do
+ActiveRecord::Schema.define(:version => 20120611184537) do
 
   create_table "documents", :force => true do |t|
     t.string   "nombre"
@@ -60,16 +60,6 @@ ActiveRecord::Schema.define(:version => 20120612213129) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "photos", :force => true do |t|
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.string   "photo_descripcion"
-    t.integer  "profile_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-  end
-
   create_table "pictures", :force => true do |t|
     t.string   "picture_file_name"
     t.string   "picture_content_type"
@@ -79,15 +69,6 @@ ActiveRecord::Schema.define(:version => 20120612213129) do
     t.integer  "property_id"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
-  end
-
-  create_table "profiles", :force => true do |t|
-    t.string   "nombre"
-    t.string   "descripcion"
-    t.integer  "type_id"
-    t.integer  "property_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
   end
 
   create_table "properties", :force => true do |t|
@@ -154,8 +135,9 @@ ActiveRecord::Schema.define(:version => 20120612213129) do
 
   create_table "types", :force => true do |t|
     t.string   "nombre"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.text     "descripcion"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|

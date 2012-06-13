@@ -9,9 +9,10 @@ end
 #
 # Table name: types
 #
-#  id         :integer         not null, primary key
-#  nombre     :string(255)
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
+#  id          :integer         not null, primary key
+#  nombre      :string(255)
+#  descripcion :text
+#  created_at  :datetime        not null
+#  updated_at  :datetime        not null
 #
 
