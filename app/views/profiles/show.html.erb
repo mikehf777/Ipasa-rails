@@ -11,3 +11,9 @@
   <strong>Propiedad</strong>
   <%= @profile.property.nombre %></br>
 </div>
+<div class="well">
+  <h1> Imagenes Asociadas al Perfil </h1>
+ <% @profile.photos.each do |image| %>
+ <%= link_to image_tag(image.photo.url(:thumb)) , image.photo.url(:original) %>
+<% end %>
+</div>

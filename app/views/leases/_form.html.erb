@@ -12,12 +12,6 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :type_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :type_id, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
     <%= f.label :precio, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :precio, :class => 'text_field' %>
@@ -30,12 +24,11 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :property_id, :class => 'control-label' %>
+    <%= f.label :profile_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :property_id, :class => 'number_field' %>
+      <%= select("lease", "profile_id", Profile.all.collect {|l| [ l.nombre, l.id ] }, {:prompt => 'Selecione una Propiedad'}) %>
     </div>
   </div>
-
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
