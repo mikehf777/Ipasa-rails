@@ -95,7 +95,4 @@ class PropertiesController < ApplicationController
       format.html
     end
   end
-
-
-
 end

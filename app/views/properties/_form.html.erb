@@ -42,39 +42,31 @@
      <%= select("property", "locality_id", Locality.all.collect {|l| [ l.nombre, l.id ] }, {:prompt => 'Seleccione una Localidad'}) %>
     </div>
   </div>
-
   <%= f.fields_for :pictures do |picture_fields| %>
-  <% if picture_fields.object.new_record? %>
-      <div>
-       <%= picture_fields.file_field :picture %>
-       <div class="control-group">
-    <%= picture_fields.label "Descripcion de la imagen", :class => 'control-label' %>
-    <div class="controls">
-      <%= picture_fields.text_field :picture_descripcion, :class => 'text_field' %>
-    </div>
+    <% if picture_fields.object.new_record? %>
+      <%= picture_fields.file_field :picture %>
+      <div class="control-group">
+        <%= picture_fields.label "Descripcion de la imagen", :class => 'control-label' %>
+        <div class="controls">
+          <%= picture_fields.text_field :picture_descripcion, :class => 'text_field' %>
+        </div>
       </div>
     <%end%>
-
   <%end%>
-
   <div class="well">
-  <h2>Eliminar y Editar Imagenes</h2>
-  <%= f.fields_for :pictures do |picture_fields| %>
-  <% unless picture_fields.object.new_record? %>
-       <%= link_to image_tag(picture_fields.object.picture.url(:thumb)) , picture_fields.object.picture.url(:original) %>
-       
-       <%= picture_fields.check_box :_destroy %>
-      <div class="control-group">
-      <%= picture_fields.label "Descripcion de la imagen", :class => 'control-label' %>
-      <div class="controls">
-      <%= picture_fields.text_field :picture_descripcion, :class => 'text_field' %>
-    </div>
-  </div>
+    <h2>Eliminar y Editar Imagenes</h2>
+    <%= f.fields_for :pictures do |picture_fields| %>
+      <% unless picture_fields.object.new_record? %>
+        <%= link_to image_tag(picture_fields.object.picture.url(:thumb)) , picture_fields.object.picture.url(:original) %>
+        <%= picture_fields.check_box :_destroy %>
+        <div class="control-group">
+          <%= picture_fields.label "Descripcion de la imagen", :class => 'control-label' %>
+          <div class="controls">
+            <%= picture_fields.text_field :picture_descripcion, :class => 'text_field' %>
+          </div>
+        </div>
+      <%end%>
     <%end%>
-  </div>
-=======
-
-  <%end%>
   </div>
   <div class="form-actions">
     <%= f.submit "Subir Propiedad", :class => 'btn btn-primary' %>

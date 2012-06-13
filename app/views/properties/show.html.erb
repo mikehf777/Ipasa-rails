@@ -1,29 +1,20 @@
-<div class="page-header">
-  <h1><%= @property.nombre %></h1>
-</div>
 <div class= "well">
-  <strong>Nombre :</strong>
-  <%= @property.nombre %></br>
-  <strong>Numero Exterior :</strong>
-  <%= @property.num_ext %></br>
-  <strong>Direccion :</strong>
-  <%= @property.direccion %></br>
-  <strong>Direccion Gooogle :</strong>
-  <%= @property.google %></br>
-  <strong>Descripcion :</strong>
-  <%= @property.descripcion %></br>
-  <strong>¿En oferta? :</strong>
-  <% if @property.ofertada == true %>
-          Si
-          <% else %>
-          No
-          <% end %>
-  </br><strong>Localidad :</strong>
-  <%= @property.locality.nombre %>
-</div>
-<div class="well">
-  <h1> Imagenes Asociadas a la Propiedad</h1>
- <% @property.pictures.each do |image| %>
- <%= link_to image_tag(image.picture.url(:thumb)) , image.picture.url(:original) %>
-<% end %>
+  <% @property.pictures.each do |image| %>
+    <%= link_to image_tag(image.picture.url(:thumb)) , image.picture.url(:original) %>
+  <% end %>
+  <h2><%= @property.nombre %></h2>
+  <dl class="dl-horizontal">
+    <dt>Localidad:</dt>
+    <dd><%= @property.locality.nombre %></dd>
+    <dt>N° exterior:</dt>
+    <dd><%= @property.num_ext %></dd>
+    <dt>Dirección:</dt>
+    <dd><%= @property.direccion %></dd>
+    <dt>Google Maps:</dt>
+    <dd><%= @property.google %></dd>
+    <dt>Descripción:</dt>
+    <dd><%= @property.descripcion %></dd>
+    <dt>¿En oferta?</dt>
+    <dd><%= @property.ofertada ? "Si" : "No" %></br></dd>
+  </dl>
 </div>
